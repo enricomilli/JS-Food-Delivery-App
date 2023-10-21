@@ -1,0 +1,238 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+.container {
+    margin: 0px;
+    padding: 6px 0;
+    display: grid;
+    background-color: rgb(60, 92, 99);
+    grid-auto-flow: column;
+    grid-template-columns: 70px auto 70px;
+    justify-items: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0px 10px 7px 7px;
+}
+.website-logo {
+    flex: 1;
+    text-align: center;
+}
+.container h1 {
+    font-size: 1.6em;
+    margin: 0.2em auto auto 0.2em;
+}
+.container h3 {
+    font-size: 1em;
+    margin: 0.2em 0px;
+}
+
+.menu-expand-icon {
+    margin-left: auto;
+}
+.expand-three {
+    display: none;
+    list-style-type: none;
+    padding: 0px;
+}
+#drop-down-icon {
+    font-size: 1.2em;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 85vw;
+    max-width: 500px;
+    height: 70vh;
+    overflow: scroll;
+}
+.active {
+    display: block;
+}
+.modal-heading {
+    text-align: center;
+    color: white;
+    background-color: rgb(60, 92, 99);
+    margin: 0px;
+    padding: 1px 0px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 70px auto 70px;
+    justify-items: center;
+    align-items: center;
+}
+
+.modal-btn-style {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 1.1rem;
+}
+.button-close-modal {
+    margin: 0 auto 0 0.7rem;
+}
+.button-back-modal {
+    margin: 0 0.7rem 0 auto;
+
+}
+.checkout-body {
+    margin: 0 0.8rem;
+    height: 59vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.incButtons { 
+    border-radius: 50%;
+    padding: 5px 10px;
+    border: 2px solid rgb(60, 92, 99);
+    background-color: transparent;
+    margin-right: auto;
+    font-weight: 900;
+
+}
+.incButtons:hover {background-color: rgba(60, 92, 99, 0.21)}
+
+.incButtons:active {
+  background-color: transparent;
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
+}
+
+.fooditems {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 90%;
+    max-width: 600px;
+}
+
+.food-dets ul {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.2em;
+    flex-wrap: nowrap;
+}
+
+.food-list-item {
+    list-style-type: none;
+    margin-left: 0.4em;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.food-title {
+    display: block;
+    font-size: 1.6em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.food-title h4 {
+    margin: 0px;
+}
+.food-cal {
+    display: inline-block;
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.75);
+}
+.food-cost {
+    font-size: 1.1em;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+.see-cart-btn {
+    padding: 10px 10px;
+    background: rgb(60, 92, 99);
+    color: white;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 75%;
+    max-width: 400px;
+    border: 0px;
+    border-radius: 10px;
+    font-weight: 900;
+    font-size: large;
+}
+.see-cart-btn:disabled {
+    background: rgb(76, 76, 76);
+    color: rgb(105, 105, 105);
+}
+.checkoutItems {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.8em;
+}
+.checkoutItems h4{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.finish-purchase {
+    /* padding-bottom: 1rem; */
+    font-size: large;
+    padding-bottom: 1rem;
+}
+.purchase-button {
+    width: 100%;
+    padding: 0.8em 0;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(60, 92, 99);
+    color: white;
+    font-weight: 900;
+    font-size: large;
+}
+.purchase-button:hover, 
+.purchase-button:focus {
+    background-color: rgb(47, 71, 77);
+}
+.totals {
+    text-align: right;
+}
+.payment-input {
+    font-family: inherit;
+    display: block;
+    width: 100%;
+    padding: 1em 0.5em;
+    margin: 0.9em 0 ;
+}
+.input-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.remove-btn {
+    border: none;
+    border-radius: 1em;
+    background-color: rgb(47, 71, 77);
+    color: white;
+    /* padding: 0px 10px; */
+    margin-left: 5px;
+}
+.remove-btn:hover {
+    color: white;
+}
+
