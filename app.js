@@ -42,7 +42,7 @@ function renderFoodItems(){
 
 // Top right drop down menu event listener
 dropDownMenuBtn.addEventListener('click', ()=> {
-    dropDownMenu.classList.toggle('active')
+    dropDownMenu.classList.toggle('open-menu')
 })
 
 // Add food item to cart event listener
@@ -51,6 +51,7 @@ document.addEventListener("click", (e)=>{
         foodItemsArray.filter((obj)=>{
             if (obj.uuid === e.target.dataset.incplus) {
                 obj.quantity++
+                // Show a checkmark for 1 sec to indicate its been added to cart
                 const btnUsed = document.querySelector(`button[data-incplus=${e.target.dataset.incplus}`)
                 btnUsed.textContent = '✓'
                 setTimeout(()=> {
@@ -71,18 +72,21 @@ document.addEventListener("click", (e)=>{
     }
 })
 
+
+// See cart button event listener
 checkoutBtn.addEventListener('click', ()=> {
     modal.classList.toggle('active')
     renderCheckout()
 })
 
-
-
+// Render Checkout
 function renderCheckout() {
     modalHeading.innerHTML = ''
     finishPurchase.style.display = 'block'
     let writtenCart = ``
     let total = 0
+
+    // Find food items that have been added to cart
     foodItemsArray.filter( obj => {
         if (obj.quantity > 0) {
             writtenCart += `
@@ -113,6 +117,8 @@ function renderCheckout() {
     totalCalc.innerHTML = `<h3 class='totals'>Total = $${total}</h3>`
 }
 
+
+// Payments page render
 function paymentDets() {
     let payEl = document.createElement('form')
     let newCheckoutHead = document.createElement('button')

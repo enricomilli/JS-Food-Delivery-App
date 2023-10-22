@@ -32,34 +32,56 @@ body {
     margin: 0.2em 0px;
 }
 
-.menu-expand-icon {
-    margin-left: auto;
-}
-.expand-three {
+.drop-down-menu-wrap {
     position: absolute;
-    display: none;
+    top: 5.5%;
+    right: 1.5%;
+    width: 150px;
+    background-color: rgb(60, 92, 99);
+    border-radius: 1rem;
+    z-index: 200;
+    max-height: 0px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+.drop-down-menu-wrap.open-menu {
+    max-height: 200px;
+}
+.drop-menu-list-wrapper {
+    padding: 0.6rem;
+}
+.drop-menu-list {
+    margin: 0px;
+    width: 100%;
     flex-direction: column;
     flex: 0 0 100%;
-    top: 1.9rem;
-    right: 1.7rem;
+    gap: 1rem ;
     color: black;
     list-style-type: none;
-    padding: 0.6rem;
-    background-color: white;
-    border: solid 1px;
+    padding: 0px;
     border-radius: 1rem;
-    z-index: 100;
+    z-index: 200;
+    text-align: right;
     transition: all 0.3s;
 }
-.expand-three > li > button {
-    margin: 0.4rem;
+.drop-menu-list > li > a {
+    width: 100%;
+    margin: 0px;
+    color: white;
+    display: flex;
+    justify-content: right;
     border: none;
+    text-decoration: none;
     border-radius: 10px;
-    padding: 0.3rem;
+    padding: 0.4rem 0.8rem;
     font-size: 1.3rem;
     cursor: pointer;
 }
-.menu-btns:active {
+.drop-menu-links:hover {
+    background-color: #b0b0b052;
+
+}
+.drop-menu-links:active {
     background-color: #666;
 }
 
