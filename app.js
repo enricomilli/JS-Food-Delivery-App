@@ -2,6 +2,9 @@ import { foodItemsArray } from "./data.js"
 
 const foodItemsDiv = document.querySelector('.fooditems')
 const checkoutBtn = document.querySelector('.see-cart-btn')
+const dropDownMenuBtn = document.querySelector('#drop-down-icon-button')
+const dropDownMenu = document.querySelector('#drop-down-menu')
+
 const cart = []
 const modal = document.querySelector('.modal')
 const checkOutBody = document.querySelector('.checkout-body')
@@ -15,7 +18,7 @@ renderFoodItems()
 
 purchaseBtn.addEventListener('click', paymentDets )
 
-
+// Render the food on menu
 function renderFoodItems(){
     let HtmlText = ``
     foodItemsArray.forEach((obj) => {
@@ -37,12 +40,22 @@ function renderFoodItems(){
     foodItemsDiv.innerHTML = HtmlText
 }
 
+// Top right drop down menu event listener
+dropDownMenuBtn.addEventListener('click', ()=> {
+    dropDownMenu.classList.toggle('active')
+})
 
+// Add food item to cart event listener
 document.addEventListener("click", (e)=>{
     if (e.target.dataset.incplus) { 
         foodItemsArray.filter((obj)=>{
             if (obj.uuid === e.target.dataset.incplus) {
                 obj.quantity++
+                const btnUsed = document.querySelector(`button[data-incplus=${e.target.dataset.incplus}`)
+                btnUsed.textContent = '✓'
+                setTimeout(()=> {
+                    btnUsed.textContent = "+"
+                }, 1000)
             }
         })
         checkoutBtn.disabled = false
@@ -62,6 +75,8 @@ checkoutBtn.addEventListener('click', ()=> {
     modal.classList.toggle('active')
     renderCheckout()
 })
+
+
 
 function renderCheckout() {
     modalHeading.innerHTML = ''

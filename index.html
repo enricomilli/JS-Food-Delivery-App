@@ -5,20 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Justice Eats</title>
+    <title>Jamie's Pub and Shop</title>
+    <script src="https://kit.fontawesome.com/5f9e23cb49.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
         <span></span>
         <div class="website-logo">
-            <h1>Justice Eats</h1>
-            <h3>Simple Deliveries</h3>
+            <h1>Jamie's Pub and Shop</h1>
+            <h3>Now taking orders online!</h3>
         </div>
         <div id="menu-expand-icon">
-            <i class="fa-solid fa-ellipsis-vertical" id="drop-down-icon"></i>
-            <ul class="expand-three" data-expandmenu>
-                <li>About App</li>
-                <li>Help</li>
+            <button id="drop-down-icon-button">
+                <i class="fa-solid fa-ellipsis-vertical" id="drop-down-icon"></i>
+            </button>
+            <ul class="expand-three" data-expandmenu id="drop-down-menu">
+                <li>
+                    <button class="menu-btns">About</button>
+                </li>
+                <li>
+                    <button class="menu-btns">Help</button>
+                </li>
+                <li>
+                    <button class="menu-btns">Settings</button>
+                </li>
             </ul>     
         </div>
     </div>
@@ -26,7 +36,10 @@
             <div class="fooditems">
                 
             </div>
-        <button disabled class="see-cart-btn">See Cart <i class="fa-regular fa-cart-shopping" style="color: #ffffff;"></i></button>
+        <button disabled class="see-cart-btn">
+            See Cart 
+            <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+        </button>
             <div class="modal">
                 <div class="modal-heading">
 
@@ -42,6 +55,5 @@
         </div>
         
     <script src="app.js" type="module"></script>
-    <script src="https://kit.fontawesome.com/5f9e23cb49.js" crossorigin="anonymous"></script>
 </body>
 </html>

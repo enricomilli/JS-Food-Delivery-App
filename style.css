@@ -36,12 +36,39 @@ body {
     margin-left: auto;
 }
 .expand-three {
+    position: absolute;
     display: none;
+    flex-direction: column;
+    flex: 0 0 100%;
+    top: 1.9rem;
+    right: 1.7rem;
+    color: black;
     list-style-type: none;
-    padding: 0px;
+    padding: 0.6rem;
+    background-color: white;
+    border: solid 1px;
+    border-radius: 1rem;
+    z-index: 100;
+    transition: all 0.3s;
 }
-#drop-down-icon {
+.expand-three > li > button {
+    margin: 0.4rem;
+    border: none;
+    border-radius: 10px;
+    padding: 0.3rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.menu-btns:active {
+    background-color: #666;
+}
+
+#drop-down-icon-button {
     font-size: 1.2em;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
 }
 .modal {
     display: none;
@@ -55,22 +82,23 @@ body {
     width: 85vw;
     max-width: 500px;
     height: 70vh;
-    overflow: scroll;
 }
 .active {
     display: block;
 }
 .modal-heading {
+    position: relative;
     text-align: center;
     color: white;
     background-color: rgb(60, 92, 99);
     margin: 0px;
-    padding: 1px 0px;
+    /* padding: 1px 0px; */
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 70px auto 70px;
     justify-items: center;
     align-items: center;
+    /* border-radius: 20px; */
 }
 
 .modal-btn-style {
@@ -101,7 +129,7 @@ body {
     background-color: transparent;
     margin-right: auto;
     font-weight: 900;
-
+    transition: all 0.1s;
 }
 .incButtons:hover {background-color: rgba(60, 92, 99, 0.21)}
 
@@ -136,9 +164,9 @@ body {
     flex-shrink: 1;
 }
 .food-title {
-    display: block;
+    display: inline-block;
     font-size: 1.6em;
-    display: flex;
+    margin-bottom: 5px;
     flex-direction: row;
     align-items: center;
 }
